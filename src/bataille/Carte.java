@@ -3,8 +3,8 @@ package bataille;
 public class Carte {
     
     // Attributs
-    private static String couleur[] = {"coeur","pique","trefle","carreau"};
-    private static String valeur[] = {"2","3","4","5","6","7","8","9","10","Valet","Dame","Roi","As"} ; 
+    private static String couleurs[] = {"coeur","pique","trefle","carreau"};
+    private static String valeurs[] = {"2","3","4","5","6","7","8","9","10","Valet","Dame","Roi","As"} ; 
     private int indexCouleur;
     private int indexValeur; 
     
@@ -34,11 +34,11 @@ public class Carte {
     
     // Méthode qui indique la taille du tableau
     public static int getNbCouleurs(){
-        return couleur.length;
+        return couleurs.length;
     }
 
     public static int getNbValeurs(){
-        return valeur.length;
+        return valeurs.length;
     }
     
     // Debug
