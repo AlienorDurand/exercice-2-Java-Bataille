@@ -8,18 +8,16 @@ public class Bataille {
         Joueur j1 = new Joueur("Nox");
         Joueur j2 = new Joueur("Ceryse");
         
-        System.out.println(j1.getNom());
+        System.out.println("Le joueur "+j1.getNom()+" va affronter le joueur "+j2.getNom()+" au jeu de la bataille!");
+        
         
         // Création du paquet 
         Carte[] paquet = new Carte[52] ;
         int compteur = 0; 
         
-        for(int a=0; a<Carte.getNbCouleurs(); a++){
-            for(int b=0; b<Carte.getNbValeurs(); b++){
-                paquet[compteur] = new Carte(a,b);
-                /*System.out.println("a"+a);
-                System.out.println("b"+b);
-                System.out.println("paquet"+paquet[compteur]);*/
+        for(int couleur=0; couleur<Carte.getNbCouleurs(); couleur++){
+            for(int valeur=0; valeur<Carte.getNbValeurs(); valeur++){
+                paquet[compteur] = new Carte(couleur,valeur);
                 compteur++;
             }  
         }
@@ -30,7 +28,5 @@ public class Bataille {
         // Comparer
         
                
-    }
-      
-    
+    }   
 }

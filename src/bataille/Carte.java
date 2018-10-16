@@ -23,14 +23,14 @@ public class Carte {
         return indexValeur;
     }
 
-    // Setter même si en théorie on ne devrait pas changer les cartes
+    /* Setter même si en théorie on ne devrait pas pouvoir changer les cartes donc je les mets en commentaire pour éviter toutes tricheries (ex: créer un 21 de carreau)
     public void setIndexCouleur(int indexCouleur) {
         this.indexCouleur = indexCouleur;
     }
 
     public void setIndexValeur(int indexValeur) {
         this.indexValeur = indexValeur;
-    }
+    }*/
     
     // Méthode qui indique la taille du tableau
     public static int getNbCouleurs(){
@@ -44,10 +44,10 @@ public class Carte {
     // Debug
     @Override
     public String toString() {
-        return "Carte{" + ", indexCouleur=" + indexCouleur + ", indexValeur=" + indexValeur + '}';
+        return "Carte{" +", indexCouleur=" + indexCouleur + ", indexValeur=" + indexValeur + '}';
     }
 
-    //Comparateur
+    /*Comparateur
     public boolean comparerCarte(int indexA){
         boolean res;
         
@@ -57,6 +57,10 @@ public class Carte {
             res = false;
         }
         return res;
+    }*/
+    public int comparerCarte(Carte uneCarte){
+        
+        return 0;
     }
     
 }

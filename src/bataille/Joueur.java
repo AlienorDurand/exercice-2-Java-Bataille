@@ -12,10 +12,15 @@ public class Joueur {
         this.nom = nom;
     }
     
-    // Get
+    // Accesseur nom
     public String getNom(){
-    return this.nom;
-}
+        return this.nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    
     // Methodes
     public int tirer(){
        return 0; 
@@ -26,6 +31,7 @@ public class Joueur {
     }
     
     public int gagner(){
-        return scores+1 ;
+        scores = scores +1;
+        return scores ;
     }
 }
