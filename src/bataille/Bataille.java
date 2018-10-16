@@ -5,8 +5,10 @@ public class Bataille {
     public static void main(String[] args) {
         
         // Création des joueurs
-        Joueur j1 = new Joueur();
-        Joueur j2 = new Joueur();
+        Joueur j1 = new Joueur("Nox");
+        Joueur j2 = new Joueur("Ceryse");
+        
+        System.out.println(j1.getNom());
         
         // Création du paquet 
         Carte[] paquet = new Carte[52] ;
@@ -23,6 +25,7 @@ public class Bataille {
         }
         
         // Mélanger le paquet
+        
         
         // Comparer
         

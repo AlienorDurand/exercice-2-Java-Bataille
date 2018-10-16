@@ -4,20 +4,9 @@ public class Carte {
     
     // Attributs
     private static String couleur[] = {"coeur","pique","trefle","carreau"};
-    private static String valeur[] = {"2","3","4","5","6","7","8","9","10","V","D","R","A"} ; 
+    private static String valeur[] = {"2","3","4","5","6","7","8","9","10","Valet","Dame","Roi","As"} ; 
     private int indexCouleur;
-    private int indexValeur;
-    
-    public boolean comparerCarte(int indexA){
-        boolean res;
-        
-        if(this.indexValeur > indexA){
-            res = true;
-        }else{
-            res = false;
-        }
-        return res;
-    }
+    private int indexValeur; 
     
     // Constructeur
     public Carte(int indexCouleur, int indexValeur) {
@@ -34,7 +23,7 @@ public class Carte {
         return indexValeur;
     }
 
-    // Setter
+    // Setter même si en théorie on ne devrait pas changer les cartes
     public void setIndexCouleur(int indexCouleur) {
         this.indexCouleur = indexCouleur;
     }
@@ -59,5 +48,15 @@ public class Carte {
     }
 
     //Comparateur
+    public boolean comparerCarte(int indexA){
+        boolean res;
+        
+        if(this.indexValeur > indexA){
+            res = true;
+        }else{
+            res = false;
+        }
+        return res;
+    }
     
 }

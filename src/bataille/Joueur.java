@@ -5,16 +5,24 @@ public class Joueur {
     // Attributs
     private int cartes[];
     private int scores = 0;
+    private String nom;
     
+    // Constructeur 
+    public Joueur(String nom){
+        this.nom = nom;
+    }
+    
+    // Get
+    public String getNom(){
+    return this.nom;
+}
     // Methodes
     public int tirer(){
-        int res = cartes[0];
-        cartes[1] = cartes[0];
-        return res;
+       return 0; 
     }
     
     public void ajouter(int a){
-        cartes[cartes.length+1] = a;
+        ;
     }
     
     public int gagner(){
