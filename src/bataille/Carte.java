@@ -33,11 +33,11 @@ public class Carte {
     }*/
     
     // Méthode qui indique la taille du tableau
-    public static int getNbCouleurs(){
+    public static int getNbCouleur(){
         return couleurs.length;
     }
 
-    public static int getNbValeurs(){
+    public static int getNbValeur(){
         return valeurs.length;
     }
     
@@ -47,20 +47,18 @@ public class Carte {
         return "Carte{" +", indexCouleur=" + indexCouleur + ", indexValeur=" + indexValeur + '}';
     }
 
-    /*Comparateur
-    public boolean comparerCarte(int indexA){
-        boolean res;
-        
-        if(this.indexValeur > indexA){
-            res = true;
-        }else{
-            res = false;
-        }
-        return res;
-    }*/
     public int comparerCarte(Carte uneCarte){
         
-        return 0;
+        int res;
+        
+        if(this.indexValeur< uneCarte.getIndexValeur()){
+            res = -1;
+        }else if(this.indexValeur > uneCarte.getIndexValeur()){
+            res = 1;
+        }else{
+            res = 0;
+        }
+        return res;
     }
     
 }

@@ -3,7 +3,7 @@ package bataille;
 public class Joueur {
     
     // Attributs
-    private int cartes[];
+    private int cartes[] ;
     private int scores = 0;
     private String nom;
     

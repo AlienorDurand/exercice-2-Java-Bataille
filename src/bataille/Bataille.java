@@ -1,4 +1,6 @@
 package bataille;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Bataille {
 
@@ -12,18 +14,21 @@ public class Bataille {
         
         
         // Création du paquet 
-        Carte[] paquet = new Carte[52] ;
-        int compteur = 0; 
-        
-        for(int couleur=0; couleur<Carte.getNbCouleurs(); couleur++){
-            for(int valeur=0; valeur<Carte.getNbValeurs(); valeur++){
-                paquet[compteur] = new Carte(couleur,valeur);
-                compteur++;
+        ArrayList paquet = new ArrayList();
+       
+        for(int couleur=0; couleur<Carte.getNbCouleur(); couleur++){
+            for(int valeur=0; valeur<Carte.getNbValeur(); valeur++){
+                paquet.add(new Carte(couleur,valeur));
             }  
         }
         
         // Mélanger le paquet
-        
+        ArrayList paquetMelanger = new ArrayList();
+        while(paquetMelanger.length <52){
+            carte = paquet[Math.random(0,paquet.length)];
+            paquetMelanger.add(carte);
+            paquet.remove(carte);
+        }
         
         // Comparer
         
