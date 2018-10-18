@@ -1,9 +1,10 @@
 package bataille;
+import java.util.ArrayList;
 
 public class Joueur {
     
     // Attributs
-    private int cartes[] ;
+    private ArrayList cartes = new ArrayList() ;
     private int scores = 0;
     private String nom;
     
@@ -26,8 +27,8 @@ public class Joueur {
        return 0; 
     }
     
-    public void ajouter(int a){
-        ;
+    public void ajouter(Carte carte){
+        cartes.add(carte);
     }
     
     public int gagner(){

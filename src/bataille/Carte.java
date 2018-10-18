@@ -23,7 +23,7 @@ public class Carte {
         return indexValeur;
     }
 
-    /* Setter même si en théorie on ne devrait pas pouvoir changer les cartes donc je les mets en commentaire pour éviter toutes tricheries (ex: créer un 21 de carreau)
+    /* Setter même si en théorie on ne devrait pas pouvoir changer les cartes donc je les mets en commentaire pour éviter toutes tricheries (ex: créer des AS pour gagner)
     public void setIndexCouleur(int indexCouleur) {
         this.indexCouleur = indexCouleur;
     }

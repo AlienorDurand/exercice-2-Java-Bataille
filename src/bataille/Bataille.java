@@ -1,6 +1,6 @@
 package bataille;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Bataille {
 
@@ -30,7 +30,18 @@ public class Bataille {
             paquet.remove(carte);
         }
         
+        // Distribuer le paquetMélanger
+        for(int i=0; i<paquetMelanger.length; i++){
+            if((i % 2)==0){
+                j1.ajouterCarte(paquetMelanger[i]);
+            }else{
+                j2.ajouterCarte(paquetMelanger[i]);
+            }
+        }
+        
+        
         // Comparer
+        
         
                
     }   
