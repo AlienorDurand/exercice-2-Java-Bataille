@@ -1,6 +1,6 @@
 package bataille;
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class Bataille {
 
@@ -14,7 +14,7 @@ public class Bataille {
         
         
         // Création du paquet 
-        ArrayList paquet = new ArrayList();
+        List<Carte> paquet = new ArrayList();
        
         for(int couleur=0; couleur<Carte.getNbCouleur(); couleur++){
             for(int valeur=0; valeur<Carte.getNbValeur(); valeur++){
@@ -23,15 +23,15 @@ public class Bataille {
         }
         
         // Mélanger le paquet
-        ArrayList paquetMelanger = new ArrayList();
-        while(paquetMelanger.length <52){
-            carte = paquet[Math.random(0,paquet.length)];
+        List<Carte> paquetMelanger = new ArrayList();
+        while(paquetMelanger.size() <52){
+            carte = paquet[Math.random(0,paquet.size())];
             paquetMelanger.add(carte);
             paquet.remove(carte);
         }
         
         // Distribuer le paquetMélanger
-        for(int i=0; i<paquetMelanger.length; i++){
+        for(int i=0; i<paquetMelanger.size(); i++){
             if((i % 2)==0){
                 j1.ajouterCarte(paquetMelanger[i]);
             }else{

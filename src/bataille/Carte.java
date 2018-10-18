@@ -44,7 +44,7 @@ public class Carte {
     // Debug
     @Override
     public String toString() {
-        return "Carte{" +", indexCouleur=" + indexCouleur + ", indexValeur=" + indexValeur + '}';
+        return "Carte{" +"La carte représente un "+ couleurs[this.indexCouleur]+valeurs[this.indexValeur]+ '}';
     }
 
     public int comparerCarte(Carte uneCarte){
