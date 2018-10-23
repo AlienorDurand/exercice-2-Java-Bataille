@@ -37,15 +37,16 @@ public class Carte {
     }
 
     /**
-     * Setter index Couleur 
+     * Setter index Couleur, même si en théorie on ne devrait pas pouvoir changer la couleur (exemple : pour un futur jeu de poker on pourrait tricher) 
      * @param indexCouleur 
      */
+    /*
     public void setIndexCouleur(int indexCouleur) {
         this.indexCouleur = indexCouleur;
-    }
+    }*/
     
     /**
-     * Setter même si en théorie on ne devrait pas pouvoir changer la valeur donc je les mets en commentaire pour éviter toutes tricheries (ex: créer des AS pour gagner)
+     * Setter index Valeur, même si en théorie on ne devrait pas pouvoir changer la valeur donc je les mets en commentaire pour éviter toutes tricheries (ex: créer des AS pour gagner)
      * @param indexValeur 
      */
     /*public void setIndexValeur(int indexValeur) {
@@ -74,7 +75,7 @@ public class Carte {
      */
     @Override
     public String toString() {
-        return "Carte{" +"La carte représente un "+ couleurs[this.indexCouleur]+valeurs[this.indexValeur]+ '}';
+        return "Carte{"+ valeurs[this.indexValeur]+" de "+couleurs[this.indexCouleur]+ '}';
     }
 
     /**

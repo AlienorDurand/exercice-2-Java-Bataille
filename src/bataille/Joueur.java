@@ -6,7 +6,7 @@ public class Joueur {
     
     // Attributs
     // Un tableau de cartes qui correspond au paquet de carte du joueur, son score et son nom
-    private ArrayList cartes = new ArrayList<>() ;
+    private ArrayList<Carte> cartes = new ArrayList<>() ;
     private int scores = 0;
     private String nom;
     
@@ -38,7 +38,7 @@ public class Joueur {
      * Méthodes tirer une carte parmis le tableau de cartes du joueur
      * @return la 1ère carte du paquet du joueur, tout en la supprimant du tableau, car après la manche il faudra ajouter cette carte à la fin du paquet du joeueur gagnant
      */
-    public int tirer(){
+    public Carte tirer(){
        return this.cartes.remove(0); 
     }
     
@@ -47,7 +47,7 @@ public class Joueur {
      * @param carte 
      */
     public void ajouter(Carte carte){
-        cartes.add(carte);
+        this.cartes.add(carte);
     }
     
     /**
@@ -55,8 +55,16 @@ public class Joueur {
      * @return scores
      */
     public int gagner(){
-        scores = scores +1;
+        this.scores = this.scores +1;
         return scores ;
+    }
+    
+    /**
+     * Retourne la taille du tableau de cartes
+     * @return int
+     */
+    public int getNbCarte(){
+        return cartes.size() ;
     }
 
 

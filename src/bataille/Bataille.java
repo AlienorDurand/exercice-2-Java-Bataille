@@ -27,14 +27,13 @@ public class Bataille {
         
         // Mélanger le paquet : on va choisir un carte au hasard dans le paquet, ce qui va supprimer cette carte du paquet et ajouter cette carte au paquetMelanger
         while(paquetMelanger.size() <52){
-            carte = paquet.get((int)(Math.random()*paquetMelanger.size()));
+            Carte carte =  paquet.remove((int)(Math.random()*paquetMelanger.size()));
             paquetMelanger.add(carte);
-            paquet.remove(carte);
         }
         
         // Distribuer le paquetMélanger : on choisi un carte au hasard dans le paquetMelanger, et on distribut la carte tiré aux joueurs une fois sur deux
         for(int i=0; i<paquetMelanger.size(); i++){
-            carte = paquetMelanger.remove(indexRandom());
+            Carte carte = paquetMelanger.get(i);
             if((i % 2)==0){
                 j1.ajouterCarte(carte);
             }else{
@@ -43,10 +42,10 @@ public class Bataille {
         }
         
         // Comparer
-        while(j1.length=0 OU j2.length=0){
-            int j1.tireCarte();
-            int j2.tireCarte();
-            int res = j1.compareCarte(j2);
+        while(j1.getNbCarte()==0 || j2.getNbCarte()==0){
+            Carte carteJ1 = j1.tireCarte();
+            Carte carteJ2 = j2.tireCarte();
+            int res = carteJ1.compareCarte(carteJ2);
             if(res < 0){
                 j2.ajouteCarte(j1);
                 j2.ajouteCarte(j2);
@@ -59,11 +58,10 @@ public class Bataille {
         }
         
         // Scores : le joueur qui n'a plus de paquet de carte à perdu, cela apporte donc 1 point à son adversaire
-        if(j1.length=0){
+        if(j1.getNbCarte()==0){
             j2.gagner();
         }else{
             j1.gagner();
         }
-  
     }   
 }
