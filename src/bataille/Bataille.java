@@ -35,33 +35,48 @@ public class Bataille {
         for(int i=0; i<paquetMelanger.size(); i++){
             Carte carte = paquetMelanger.get(i);
             if((i % 2)==0){
-                j1.ajouterCarte(carte);
+                j1.ajouter(carte);
             }else{
-                j2.ajouterCarte(carte);
+                j2.ajouter(carte);
             }
         }
         
         // Comparer
-        while(j1.getNbCarte()==0 || j2.getNbCarte()==0){
-            Carte carteJ1 = j1.tireCarte();
-            Carte carteJ2 = j2.tireCarte();
-            int res = carteJ1.compareCarte(carteJ2);
+        List<Carte> tablePile = new ArrayList<>();
+        while(j1.getNbCarte()!=0 || j2.getNbCarte()!=0){
+            Carte carteJ1 = j1.tirer();
+            Carte carteJ2 = j2.tirer();
+            tablePile.add(carteJ1);
+            tablePile.add(carteJ2);
+            
+            int res = carteJ1.comparerCarte(carteJ2);
             if(res < 0){
-                j2.ajouteCarte(j1);
-                j2.ajouteCarte(j2);
+                for(int i=0; i<tablePile.size(); i++){
+                    j2.ajouter(tablePile.get(i));
+                }
             }else if(res > 1){
-                j1.ajouteCarte(j2);
-                j1.ajouteCarte(j1);
+                for(int i=0; i<tablePile.size(); i++){
+                    j1.ajouter(tablePile.get(i));
+                }
             }else{
-                // Si = 0 alors BATAILLE
+                Carte carteCacher1 = j1.tirer();
+                Carte carteCacher2 = j2.tirer();
+                tablePile.add(carteCacher1);
+                tablePile.add(carteCacher2);
             }
         }
         
         // Scores : le joueur qui n'a plus de paquet de carte à perdu, cela apporte donc 1 point à son adversaire
         if(j1.getNbCarte()==0){
             j2.gagner();
+            System.out.println("Le joueur "+j2.getNom()+" a gagner 1 point, son score est de "+j2.getScores());
+            System.out.println("Le score du joueur "+j1.getNom()+" est de "+j1.getScores());
         }else{
             j1.gagner();
+            System.out.println("Le joueur "+j1.getNom()+" a gagner 1 point, son score est de "+j1.getScores());
+            System.out.println("Le score du joueur "+j2.getNom()+" est de "+j2.getScores());
         }
+        
+        
     }   
 }

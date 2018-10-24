@@ -67,5 +67,9 @@ public class Joueur {
         return cartes.size() ;
     }
 
+    public int getScores() {
+        return scores;
+    }
+
 
 }
