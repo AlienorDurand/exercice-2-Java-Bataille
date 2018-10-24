@@ -27,7 +27,7 @@ public class Bataille {
         
         // Mélanger le paquet : on va choisir un carte au hasard dans le paquet, ce qui va supprimer cette carte du paquet et ajouter cette carte au paquetMelanger
         while(paquetMelanger.size() <52){
-            Carte carte =  paquet.remove((int)(Math.random()*paquetMelanger.size()));
+            Carte carte =  paquet.remove((int)(Math.random()*paquet.size()));
             paquetMelanger.add(carte);
         }
         
@@ -54,7 +54,7 @@ public class Bataille {
                 for(int i=0; i<tablePile.size(); i++){
                     j2.ajouter(tablePile.get(i));
                 }
-            }else if(res > 1){
+            }else if(res > 0){
                 for(int i=0; i<tablePile.size(); i++){
                     j1.ajouter(tablePile.get(i));
                 }
