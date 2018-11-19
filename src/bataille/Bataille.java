@@ -43,7 +43,7 @@ public class Bataille {
         
         // Comparer
         List<Carte> tablePile = new ArrayList<>();
-        while(j1.getNbCarte()==0 && j2.getNbCarte()==0){
+        while(j1.getNbCarte()!=0 && j2.getNbCarte()!=0){
             Carte carteJ1 = j1.tirer();
             Carte carteJ2 = j2.tirer();
             tablePile.add(carteJ1);
