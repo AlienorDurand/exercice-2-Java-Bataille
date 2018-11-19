@@ -51,18 +51,21 @@ public class Bataille {
             
             int res = carteJ1.comparerCarte(carteJ2);
             if(res < 0){
-                for(int i=0; i<tablePile.size(); i++){
-                    j2.ajouter(tablePile.get(i));
-                }
+                // On ajoute le paquetPile au paquet de carte du joueur J2
+                j2.ajouterPile(List<Carte> tablePile);
+                removeAll(List<Carte> tablePile);
+                // montrer les cartes
             }else if(res > 0){
-                for(int i=0; i<tablePile.size(); i++){
-                    j1.ajouter(tablePile.get(i));
-                }
+               // On ajoute le paquetPile au paquet de carte du joueur J1
+                j1.ajouterPile(List<Carte> tablePile);
+                removeAll(List<Carte> tablePile);
+                // montrer les cartes
             }else{
                 Carte carteCacher1 = j1.tirer();
                 Carte carteCacher2 = j2.tirer();
                 tablePile.add(carteCacher1);
                 tablePile.add(carteCacher2);
+                // montrer les cartes batailles
             }
         }
         
