@@ -52,13 +52,13 @@ public class Bataille {
             int res = carteJ1.comparerCarte(carteJ2);
             if(res < 0){
                 // On ajoute le paquetPile au paquet de carte du joueur J2
-                j2.ajouterPile(List<Carte> tablePile);
-                removeAll(List<Carte> tablePile);
+                j2.ajouter(tablePile);
+                tablePile.clear();
                 // montrer les cartes
             }else if(res > 0){
                // On ajoute le paquetPile au paquet de carte du joueur J1
-                j1.ajouterPile(List<Carte> tablePile);
-                removeAll(List<Carte> tablePile);
+                j1.ajouter(tablePile);
+                tablePile.clear();
                 // montrer les cartes
             }else{
                 Carte carteCacher1 = j1.tirer();

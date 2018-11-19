@@ -1,5 +1,6 @@
 package bataille;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Joueur {
@@ -50,6 +51,14 @@ public class Joueur {
         this.cartes.add(carte);
     }
     
+     /**
+     * Ajoute une List à une autre List
+     * @param pileDeCarte 
+     */
+    public void ajouter(List<Carte> pileDeCarte){
+        this.cartes.addAll(pileDeCarte);
+    }
+    
     /**
      * Incrémente le score d'un joueur
      * @return scores
@@ -75,22 +84,4 @@ public class Joueur {
         return scores;
     }
     
-    
-    /************************************ TEST 1 **********************/
-    /**
-     * Ajoute une List à une autre List
-     * @param pileDeCarte 
-     */
-    public void ajouterPile(Carte pileDeCarte){
-        this.cartes.addAll(List<Carte> pileDeCarte);
-    }
-
-    /************************************ TEST 2 **********************/
-    public void ajouterPile2(List<Carte> cartePile){
-        for(int i=0; i<cartePile.size(); i++){
-            this.cartes.ajouter(cartePile.get(i));
-        }
-    }
-
-
 }
