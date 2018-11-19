@@ -49,23 +49,25 @@ public class Bataille {
             tablePile.add(carteJ1);
             tablePile.add(carteJ2);
             
+            System.out.println("Le joueur "+j1.getNom()+" tire la carte"+carteJ1.toString()+" face au joueur "+j2.getNom()+" qui tire la carte"+carteJ2.toString());
+            
             int res = carteJ1.comparerCarte(carteJ2);
             if(res < 0){
                 // On ajoute le paquetPile au paquet de carte du joueur J2
                 j2.ajouter(tablePile);
                 tablePile.clear();
-                // montrer les cartes
+                System.out.println("Le joueur "+j2.getNom()+" l'emporte !");
             }else if(res > 0){
                // On ajoute le paquetPile au paquet de carte du joueur J1
                 j1.ajouter(tablePile);
                 tablePile.clear();
-                // montrer les cartes
+                System.out.println("Le joueur "+j1.getNom()+" l'emporte !");
             }else{
                 Carte carteCacher1 = j1.tirer();
                 Carte carteCacher2 = j2.tirer();
                 tablePile.add(carteCacher1);
                 tablePile.add(carteCacher2);
-                // montrer les cartes batailles
+                System.out.println("Bataille !");
             }
         }
         
