@@ -41,16 +41,25 @@ public class Bataille {
             }
         }
         
+        // Les joueurs vérifient qu'ils ont bien 26 cartes chacun
+        System.out.println("Au début le nb de carte de "+j1.getNom()+" est de "+j1.getNbCarte());
+        System.out.println("Au début le nb de carte de "+j2.getNom()+" est de "+j1.getNbCarte());
         // Comparer
         List<Carte> tablePile = new ArrayList<>();
         while(j1.getNbCarte()!=0 && j2.getNbCarte()!=0){
+            // On tire les cartes et on les ajoutes à la pile
             Carte carteJ1 = j1.tirer();
             Carte carteJ2 = j2.tirer();
             tablePile.add(carteJ1);
             tablePile.add(carteJ2);
             
+            // Visuel de ce qui se passe
+            System.out.println();
+            System.out.println("Le nb de carte de "+j1.getNom()+" est de "+j1.getNbCarte());
+            System.out.println("Le nb de carte de "+j2.getNom()+" est de "+j2.getNbCarte());
             System.out.println("Le joueur "+j1.getNom()+" tire la carte"+carteJ1.toString()+" face au joueur "+j2.getNom()+" qui tire la carte"+carteJ2.toString());
             
+            // Comparaison
             int res = carteJ1.comparerCarte(carteJ2);
             if(res < 0){
                 // On ajoute le paquetPile au paquet de carte du joueur J2
@@ -63,11 +72,14 @@ public class Bataille {
                 tablePile.clear();
                 System.out.println("Le joueur "+j1.getNom()+" l'emporte !");
             }else{
-                Carte carteCacher1 = j1.tirer();
-                Carte carteCacher2 = j2.tirer();
-                tablePile.add(carteCacher1);
-                tablePile.add(carteCacher2);
-                System.out.println("Bataille !");
+                if((j1.getNbCarte()!=0 && j2.getNbCarte()!=0))
+                {
+                    Carte carteCacher1 = j1.tirer();
+                    Carte carteCacher2 = j2.tirer();             
+                    tablePile.add(carteCacher1);
+                    tablePile.add(carteCacher2);
+                    System.out.println("Bataille !");
+                }
             }
         }
         
